@@ -1,0 +1,43 @@
+------------------------------------- Queue --------------------------------------
+
+     Queue (antrian) adalah struktur data linear yang mengikuti aturan
+     First-In-First-Out (FIFO) dalam manipulasinya. Elemen dimasukkan kedalam
+     queue melalui satu ujung, dan diakses dari ujung lainnya. Sehingga tidak
+     dimungkinkan untuk mengakses elemen pada indeks tertentu tanpa mengeluarkan
+     isinya terlebih dahulu. Operasi dasar pada struktur data ini:
+        - Enqueue (Insert): Menambahkan elemen dari bagian belakang (rear).
+        - Dequeue (Delete): Menghapus dan mengembalikan elemen dari bagian depan
+          (front).
+        - Peek: Mengembalikan elemen pada bagian depan queue tanpa menghapusnya.
+        - IsEmpty: Mengecek apakah queue kosong.
+        - IsFull: Mengecek apahak queue penuh.
+
+     # Jenis-jenis Queue
+        - Input Restricted Queue
+        - Output Restricted Queue
+        - Static Array-Based Queue
+             Queue berbasis array
+             - Circular Queue (Ring Buffer, Array-Based)
+                  Sebuah array-based queue yang hanya dapat enqueue dan deqeueue
+                  sebanyak kapasitas dari queue.
+        - Dynamic Queue (Link List-Based)
+        - Double Ended Queue (Deque)
+        - Priority Queue
+             - Ascending Priority Queue
+             - Descending Priority Queue
+
+     # Keuntungan
+
+     # Kerugian
+
+     # Best/Worst/Average Case time complexity
+
+     # Kegunaan
+          - Simulasi antrian pada dunia nyata.
+          - (Banyak bgt...)
+
+
+
+----------------------------------------------------------------------------------
+
+https://medium.com/techie-delight/queue-data-structure-practice-problems-and-interview-questions-f459bf0578db

@@ -1,0 +1,71 @@
+------------------------------------- Stack --------------------------------------
+
+     Stack, sesuai dengan namanya yang berarti tumpukan, adalah struktur data
+     linear yang elemen-elemen didalamnya dioperasikan dengan urutan Last-In-
+     First-Out (LIFO). Operasi dilakukan pada satu ujung yang disebut top of
+     stack. Yang berarti, setiap elemen yang dimasukkan terakhir akan diakses
+     terlebih dahulu dibandingkan dengan elemen-elemen yang masuk setelahnya.
+     Ada sedikit perbedaan terminologi dalam operasi dasar pada
+     struktur data ini:
+        - Push: Menambahkan elemen pada Top Of Stack (TOS).
+        - Pop: Mengeluarkan elemen yang ada pada TOS dan mengembalikan nilainya.
+        - Peek: Mengembalikan nilai yang ada pada TOS.
+        - IsEmpty: Mengecek apakah stack kosong.
+        - IsFull: Mengecek apakah stack full.
+
+     # Jenis-jenis stack
+          - Fixed Size Stack
+            Sebuah stack dengan kapasitas yang tetap. Ketika stack full dan
+            elemen baru ditambahkan maka, akan terjadi overflow error. Sementara
+            ketika stack kosong dan operasi pop dilakukan maka akan terjadi
+            underflow error. Diimplemetasikan dengan array.
+          - Dynamic Size Stack
+            Kebalikan dari Fixed Size Stack. Biasanya diimplementasikan dengan
+            linked list, yang memudahkan perubahan ukuran dari stack.
+
+     # Monotonic Stack
+       Stack yang mempertahankan urutan elemen didalamnya dalam urutan tertentu.
+       Misal dalam urutan naik atau turun. Monotonic Stack dapat diimplementasikan
+       dengan mengecek elemen yang ingin dimasukkan. Elemen akan bisa dimasukkan
+       jika kondisi yang ada terpenuhi. Sementara jika kondisi tidak terpenuhi,
+       pop seluruh elemen sampai kondisi terpenuhi, atau sampai mencapai bottom
+       of stack.
+          - Monotonic Increasing Stack
+            Stack yang elemennya diletakkan dalam urutan naik, dari bawah ke atas.
+          - Monotonic Decreasing Stack
+            Stack yang elemennya diltakkan dalam urutan turun, dari bawah ke atas.
+       Contoh aplikasinya seperti pada problem: Next Greater Element.
+
+     # Keuntungan
+          - Pada skenario tertentu operasi push dan pop dapat dilakukan pada
+            waktu yang konstan jika, elemen yang dicari ada pada top of stack.
+          - Implementasi stack dengan array maupun linked list dapat lebih
+            efisien pada skenario tertentu.
+
+     # Kerugian
+          - Elemen pada stack hanya bisa diakses dari atas sehingga, jika elemen
+            yang ingin diakses tidak berada pada TOS. Maka, seluruh elemen
+            diatasnya harus di pop terlebih dahulu.
+          - Stack pada umumnya memiliki kapasitas. Sehingga, jika stack sudah
+            penuh dan terjadi overflow error maka, akan berakibat ke hilangnya
+            data yang ingin dimasukkan.
+          - Tidak cocok untuk akses secara acak. Karena semua elemen harus
+            melewati top of stack agar dapat diakses.
+
+     # Best/Worst/Average Case time complexity
+          Access    | O(1) / O(N) / O(N)
+          Search    | O(1) / O(N) / O(N)
+          Insertion | O(1) / O(1) / O(1)
+          Deletion  | O(1) / O(1) / O(1)
+
+     # Kegunaan
+          - Rekursi
+          - Evaluasi ekspresi dan parsing (kalkulator gitu?)
+          - Algoritma pencarian: Depth-First Search (DFS)
+          - Operasi undo/redo
+          - Sejarah pencarian pada browser
+          - Pemanggilan fungsi (Urutan eksekusi fungsi pada stack memory)
+
+----------------------------------------------------------------------------------
+
+https://www.geeksforgeeks.org/stack-data-structure/

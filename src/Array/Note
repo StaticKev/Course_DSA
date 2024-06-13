@@ -1,0 +1,39 @@
+------------------------------------- Array --------------------------------------
+
+     Array merupakan struktur data yang paling sederhana, dimana setiap nilai
+     disimpan secara berurutan. Array tergolong sebagai linear data structure.
+
+     # Sebuah struktur data yang:
+          - Menyimpan sekumpulan data dengan tipe yang sama (homogen).
+          - Menyimpan data dalam lokasi yang bersebelahan di dalam memori.
+          - Memiliki ukuran yang tetap.
+          - Dapat diakses dengan indeks.
+          - Dikategorikan sebagai non-primitive, composite data type.
+
+     # Kentungan:
+          1) Disimpan di stack memory sehingga akses lebih cepat.
+          2) Setiap elemen disimpan bersebelahan. Sehingga untuk mengakses elemen
+             dengan indeks `n` maka hanya perlu mengambil alamat dari elemen
+             pertama dan ditambah dengan `n`. Sehingga kompleksitas dalam
+             mengakses elemen adalah konstan O(1).
+          3) Memiliki default value sesuai dengan tipe data yang dideklarasikan.
+          4) Tidak memerlukan banyak ruang di memori. (Tidak menyimpan informasi
+             mengenai elemen yang bersebelahan)
+
+     # Kerugian:
+          1) Menghapus dan menambah elemen lama karena harus dialokasikan alamat
+             baru pada memori, yang memungkinkan untuk `n` elemen ditempatkan
+             secara bersebelahan.
+          2) Tidak efektif apabila kapasitas array yang dideklarasikan tidak
+             digunakan sepenuhnya. Karena memesan banyak ruang pada memori
+             meskipun tidak digunakan.
+
+     # Best/Worst Case time complexity
+          Access    | O(1) / O(1) / O(1)
+          Search    | O(1) / O(N) / O(N)
+          Insertion | O(1) / O(N) / O(N)
+          Deletion  | O(1) / O(N) / O(N)
+
+----------------------------------------------------------------------------------
+
+https://www.geeksforgeeks.org/time-complexities-of-different-data-structures/

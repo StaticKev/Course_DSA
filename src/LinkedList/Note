@@ -1,0 +1,78 @@
+---------------------------------- Linked List -----------------------------------
+
+     Struktur data linear yang elemen-elemennya tidak disimpan di lokasi yang
+     bersebelahan, melainkan dihubungkan dengan pointer. Hal ini yang membuat
+     elemen-elemen pada linked list dapat diakses secara sekuensial. Struktur
+     dari linked list mirip seperti rantai dimana setiap elemen terhubung secara
+     1 atau 2 arah. Selain itu, tidak seperti array, linked list tergolong
+     dynamic data structure dimana ukuran dari sebuah linked list dapat
+     berubah-ubah. Hal ini karena alokasi memori pada linked list dapat dilakukan
+     secara fleksibel.
+
+     # Node Structure
+       Sebuah elemen pada linked list dapat diidentifikasi sebagai node, dimana
+       setiap node terhubung satu dengan yang lainnya. Node terdiri dari beberapa
+       bagian tergantung implementasi linked list.
+          - Data: Nilai yang terasosiasi pada node.
+          - Next Pointer: Alamat dari node berikutnya.
+          - Previous Pointer: Alamat dari node sebelumnya. (Doubly Linked List)
+          - Head & Tail: Head merupakan node pertama sementara, Tail merupakan
+            node paling akhir. Dimana next pointer dari tail adalah null.
+
+     # Keuntungan
+          - Dynamic Data Structure
+          - Ease of Insertion/Deletion: Menambah dan menghapus elemen pada linked
+            list lebih sederhana ketimbang array. Saat elemen ditambahkan atau
+            dihapus, seluruh elemen dalam linked list tidak perlu direalokasi.
+          - Efficient Memory Utilization: Linked List merupakan dynamic data
+            structure. Sehingga tidak ada pre-allocated memory.
+
+     # Kerugian
+          - Untuk mendapatkan elemen tertentu, perlu dilakukan akses secara
+            berurut untuk mendapatkan alamat dari elemen yang diinginkan.
+          - Memerlukan memori lebih untuk menyimpan pointer.
+
+     # Singly Linked List
+       Linked List yang node structurenya teridiri dari value dan pointer yang
+       merujuk pada alamat node berikutnya. Dalam penjelajahan node, tidak
+       dimungkinkan untuk mengakses node dari arah tail ke head. Sehingga waktu
+       yang diperlukan untuk mengakses elemen yang berada dekat dengan tail
+       menjadi lebih lambat.
+
+     # Doubly linked List
+       Mengatasi kekurangan dari singly linked list dimana, node structure nya
+       memiliki pointer ke node sebelumnya. Karena harus menyimpan pointer dari
+       node sebelumnya, maka ukuran yang diperlukan juga lebih besar.
+
+     # Circular Linked List
+       Pada doubly linked list, previous pointer pada head dan next pointer pada
+       tail adalah null. Circular Linked List menghubungkan previous pointer pada
+       head dengan next pointer pada tail.
+
+     # Best/Worst/Average Case time complexity (Singly)
+          Access    | O(1) / O(N) / O(N)
+          Search    | O(1) / O(N) / O(N)
+          Insertion | O(1) / O(N) / O(1)
+          Deletion  | O(1) / O(N) / O(1)
+
+     # Best/Worst/Average Case time complexity (Doubly)
+          Access    | O(1) / O(1) / O(1)
+          Search    | O(1) / O(N) / O(N)
+          Insertion | O(1) / O(N) / O(N)
+          Deletion  | O(1) / O(N) / O(N)
+
+     # Kegunaan
+          - Implementasi struktur data Stack, Queue, dan Graph. Untuk graph
+            dapat digunakan untuk merepresentasikan sebuah list yang menyimpan
+            simpul yang berdekatan.
+          - Dynamic memory allocation.
+          - Melakukan operasi aritmatika untuk bilangan yang melebihi kapasitas.
+          - Manipulasi polinomial dengan menyimpan konstan pada node dari
+            linked list.
+     Find more here: https://www.geeksforgeeks.org/applications-of-linked-list-data-structure/
+
+----------------------------------------------------------------------------------
+
+https://www.geeksforgeeks.org/data-structures/linked-list/singly-linked-list/
+https://www.geeksforgeeks.org/data-structures/linked-list/doubly-linked-list/
+https://www.geeksforgeeks.org/merge-sort-for-linked-list/

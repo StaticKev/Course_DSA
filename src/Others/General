@@ -1,0 +1,62 @@
+--------------------------- Algoritma & Struktur Data ----------------------------
+
+Sebuah cara untuk menyimpan data secara struktural sedemikian rupa sehingga data
+dapat diatur, disimpan, dan dikelola secara efisien di dalam memori. Dengan
+menggunaan struktur data, dapat meningkatkan efisiensi dari berbagai macam
+algoritma. Struktur data didesain dengan menyusun elemen data menjadi unit logika
+yang mewakili tipe data abstrak (ADT) yang memiliki relevansi dengan algoritma
+atau aplikasi. Struktur data dapat digunakan untuk mengatur resource dan service,
+pertukaran data, pengurutan, penyortiran, indexing, pencarian, dan skalabilitas.
+Struktur data juga termasuk dalam tipe komposit yang menyimpan sekumpulan data
+atomik yang sejenis (biasanya).
+
+# Abstract Data Type (ADT)
+    Abstraksi dari struktur data yang hanya menyediakan interface yang mana harus
+    diikuti oleh sebuah struktur data. ADT mendefinisikan perilaku dari struktur
+    data. Setiap ADT memiliki implementasi yang spesifik.
+
+# Hirarki Tipe Struktur Data
+    1) Struktur data primitif
+       Cara untuk menyusun sebuah data atomik didalam memori. Secara struktural,
+       struktur data primitif hanya akan menentukan besarnya memori yang akan
+       dialokasikan untuk deklarasi yang spesifik.
+          - Integer
+          - Float
+          - Character
+          - Boolean
+   2) Struktur data non-primitif
+      Sebuah kumpulan struktur data primitif yang digunakan untuk menentukan cara
+      untuk menyimpan kumpulan data atomik didalam memori. Menyediakan cara untuk
+      merepresentasikan relasi diantara elemen data dan memungkinkan akses,
+      penyimpanan, dan manipulasi data yang efisien.
+         > Struktur data linear
+            - Array
+            - Stack
+            - Queue
+            - Linked List
+         > Struktur data non-linear
+            - Tree
+            - Graph
+            - Hash Table
+            - Trie/Keyword Tree
+
+# Karakteristik Struktur Data
+   1) Linear atau Non-Linear
+      Data disimpan secara terurut atau tidak terurut.
+   2) Homogen atau Heterogen
+      Masing-masing elemen pada struktur data bertipe sama atau berbeda.
+   3) Statis atau Dinamis
+      Bagaimana struktur data dikompilasi. Apakah struktur data memiliki ukuran
+      yang tetap atau dapat berubah tergantung penggunaan.
+
+# 5 Faktor yang harus dipertimbangkan dalam memilih struktur data:
+   1) Informasi yang akan disimpan.
+   2) Bagaimana informasi akan digunakan.
+   3) Dimana data tersebut harus tetap ada atau disimpan, setelah data tersebut
+      dibuat.
+   4) Cara terbaik untuk mengorganisir data.
+   5) Managemen reservasi memori dan penyimpanan.
+
+----------------------------------------------------------------------------------
+
+https://www.programiz.com/dsa/data-structure-types#:~:text=Basically%2C%20data%20structures%20are%20divided,Non%2Dlinear%20data%20structure

@@ -1,0 +1,51 @@
+----------------------------------------------------------------------------------
+
+# Algorithm
+     Seperangkat instruksi untuk melakukan sebuah tugas atau menyelesaikan sebuah
+     masalah. Algoritma yang baik dapat berjalan dengan cepat dan tidak memakan
+     banyak memori.
+     - Time Complexity
+          Waktu yang diperlukan oleh sebuah algoritma untuk berjalan.
+     - Space Complexity
+          Banyak memori yang diperlukan sebuah algoritma untuk berjalan.
+
+# Asymptotic Analysis
+     Mengevaluasi time and space performance dari sebuah algoritma. Analisis ini
+     tidak mengukur waktu sebenarnya yang dibutuhkan sebuah algoritma untuk
+     berjalan. Analisis ini dapat menunjukkan bahwa time and space complexity
+     dapat dipengaruhi oleh ukuran input.
+
+# Asymptotic Notation
+     Notasi matematika yang digunakan untuk mendeskripsikan waktu yang diperlukan
+     algoritma untuk berjalan. Fungsi utama dari asymptotic notation yaitu untuk
+     menentukan best case, average case, dan worst case. Digunakan untuk
+     membandingkan antara input dengan waktu eksekusi.
+     - Big Omega Notation
+          Menentukan batasan bawah atau waktu tercepat yang dibutuhkan oleh sebuah
+          algoritma untuk selesai dieksekusi.
+     - Big O Notation
+          Menentukan batasan atas atau waktu terlama yang dibutuhkan oleh sebuah
+          algoritma untuk selesai dieksekusi.
+     - Big Theta Notation
+          Menentukan waktu rata-rata berdasarkan best case dan worst case dari
+          sebuah algoritma untuk selesai dieksekusi.
+
+# Aturan Big O Notation
+     - Single processor
+     - Menjalankan eksekusi perintah secara sekuensial
+     - Assignment, arithmetic, logical, single operation, dan return statement
+       dihitung satu satuan waktu.
+     - Dropping low - order terms: excluding terms that are not directly related
+       to the input size.
+     - Dropping constant multipliers.
+
+# Literatur
+     - Asymptotic Notation and Analysis (Based on input size) in Complexity
+       Analysis of Algorithm
+          Source: https://www.geeksforgeeks.org/asymptotic-notation-and-analysis-based-on-input-size-of-algorithms/
+     - Big O Notation Tutorial - A Guide to Big O Analysis
+          Source: https://www.geeksforgeeks.org/analysis-algorithms-big-o-analysis/
+     - Time complexities of different data structures
+          Source: https://www.geeksforgeeks.org/time-complexities-of-different-data-structures/
+
+----------------------------------------------------------------------------------
