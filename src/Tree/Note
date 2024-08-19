@@ -1,0 +1,40 @@
+-------------------------------------- Tree --------------------------------------
+
+     Tree adalah struktur data non-linear dimana kumpulan nilai yang
+     direpresentasikan oleh node, terhubung satu dengan yang lainnya tanpa adanya
+     loop. Digunakan untuk merepresentasikan struktur hirarki. Hubungan antar
+     node pada sebuah tree adalah parent-child. Dimana parent adalah node yang
+     menunjukkan node lain, sementara node yang ditunjuk oleh parent adalah child
+     node. Sebuah tree diawali dengan root, yaitu sebuah node yang merupakan
+     parent dari seluruh node. Node yang tidak memiliki child disebut dengan
+     leaf. Setiap node dapat menunjuk pada beberapa node sekaligus.
+
+     # Jenis-jenis tree
+          - Binary Tree
+               - Binary Search Tree: Binary tree yang mengikuti sebuah aturan
+                 dalam menyimpan data untuk meningkatkan efisiensi algoritma.
+                 Aturan yang dimaksud yaitu subtree kiri hanya boleh menyimpan
+                 key yang lebih kecil dari root, sementara subtree kanan hanya
+                 boleh menyimpan key yang lebih besar dari root. Aturan yang
+                 sama juga berlaku untuk masing-masing subtree.
+               - B Tree
+               - B+ Tree
+               - AVL Tree
+               - Red-black Tree
+          - Ternary Tree
+          - N-ary Tree / Generic Tree
+
+     # Tree Traversal - inorder, preorder, and postorder
+
+
+     # Keuntungan
+
+     # Kerugian
+
+     # Best/Worst/Average Case time complexity
+
+     # Kegunaan
+
+----------------------------------------------------------------------------------
+
+https://www.geeksforgeeks.org/tree-data-structure/

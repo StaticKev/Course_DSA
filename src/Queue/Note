@@ -27,16 +27,25 @@
              - Descending Priority Queue
 
      # Keuntungan
+        - Menerapkan aturan first in first out yang menyerupai sistem antrian.
+        - Memasukkan dan menghapus data dari ujung sangat cepat.
 
      # Kerugian
+        - Ukuran queue harus didefinisikan jika queue diimplementasikan dengan
+          array.
+        - Memasukkan dan menghapus data dari tengah-tengah queue memakan waktu.
+        - Kompleksitas waktu dari pencarian elemen linear.
 
      # Best/Worst/Average Case time complexity
+          Access    | O(1) / O(N) / O(N)
+          Search    | O(1) / O(N) / O(N)
+          Insertion | O(1) / O(1) / O(1)
+          Deletion  | O(1) / O(1) / O(1)
 
      # Kegunaan
           - Simulasi antrian pada dunia nyata.
+          - Kalkulator
           - (Banyak bgt...)
-
-
 
 ----------------------------------------------------------------------------------
 

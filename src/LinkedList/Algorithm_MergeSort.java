@@ -58,8 +58,7 @@ class SinglyLinkedList {
         node right = mergeSort(nextofmiddle);
 
         // Merge the left and right lists
-        node sortedlist = sortedMerge(left, right);
-        return sortedlist;
+        return sortedMerge(left, right);
     }
 
     // Utility function to get the middle of the linked list
