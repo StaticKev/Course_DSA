@@ -16,16 +16,41 @@
                  Aturan yang dimaksud yaitu subtree kiri hanya boleh menyimpan
                  key yang lebih kecil dari root, sementara subtree kanan hanya
                  boleh menyimpan key yang lebih besar dari root. Aturan yang
-                 sama juga berlaku untuk masing-masing subtree.
+                 sama juga berlaku untuk masing-masing subtree. BST memiliki
+                 struktur yang cukup unik dimana, dengan aturan insertion yang
+                 seperti ini, proses penyortiran menjadi lebih efisien. Dengan
+                 melakukan In-order traversal, isi dari binary tree dapat
+                 diambil secara tersortir. Kompleksitas pencarian dan pemasukan
+                 elemen kedalam tree bergantung dengan ketinggian tree. Sehingga
+                 untuk memperoleh performa yang maksimal maka diperlukan tinggi
+                 minimum. Tinggi minimum dapat diperoleh dengan menyeimbangkan
+                 ketinggian pada subtree kiri dan kanan.
+               - AVL Tree (Self balancing BST):
                - B Tree
                - B+ Tree
-               - AVL Tree
                - Red-black Tree
           - Ternary Tree
           - N-ary Tree / Generic Tree
 
      # Tree Traversal - inorder, preorder, and postorder
 
+     # Menyeimbangkan Tree
+       Untuk `n` elemen terdapat n! kemungkinan urutan tree untuk dibuat.
+       Menyeimbangkan tree dapat dilakukan dengan menyortir seluruh elemen dengan
+       In-order traversal, mencari median dari elemen-elemen yang tersortir,
+       menjadikannya root, dan memasukkan sisanya dengan mencari median.
+       Penyortiran dapat dilakukan secara iteratif, sementara penyusunan
+       dilakukan dengan rekursif. Dalam penyusunan akan selalu diambil elemen
+       tengah untuk dijadikan sebagai root dari subtree. Indeks yang digunakan
+       untuk menyatakan elemen tengah berbeda untuk tiap subtree. Untuk subtree
+       kiri, diambil median antara elemen pertama sebagai acuan, dan elemen
+       tengah dari hasil penyortiran (dikurangi hingga sama dengan 0). Sementara,
+       untuk subtree kanan, diambil median antara elemen tengah (ditambah hingga
+       sama dengan indeks terakhir) dan elemen terakhir sebagai acuan. Sehingga
+       proses tersebut akan selalu mengambil nilai tengah sebagai root dari
+       masing-masing subtree dimana root dari masing-masing subtree harus
+       merupakan median dari elemen-elemen yang menjadi anak-anaknya agar tree
+       menjadi seimbang.
 
      # Keuntungan
 

@@ -71,15 +71,16 @@ class MyBinaryTree<T> {
         if (this.root == null) return;
         Stack<BinaryTreeNode<T>> stack = new Stack<>();
         BinaryTreeNode<T> temp = root;
-        while(!stack.isEmpty() || temp != null) {
-            if (temp != null) {
+
+        while (!stack.isEmpty() || temp != null) {
+            while (temp != null) {
                 stack.push(temp);
-                temp = root.left;
-            } else {
-                temp = stack.pop();
-                System.out.println();
-                temp = temp.right;
+                temp = temp.left;
             }
+
+            temp = stack.pop();
+            System.out.println(temp.data + " ");
+            temp = temp.right;
         }
     }
 
