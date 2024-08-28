@@ -25,7 +25,12 @@
                  untuk memperoleh performa yang maksimal maka diperlukan tinggi
                  minimum. Tinggi minimum dapat diperoleh dengan menyeimbangkan
                  ketinggian pada subtree kiri dan kanan.
-               - AVL Tree (Self balancing BST):
+               - AVL Tree (Self balancing BST): Sebuah tree yang memiliki tinggi
+                 minimum dimana, perbedaan tinggi dari subtree yang kiri dengan
+                 subtree yang kanan tidak lebih dari satu. Sebuah BST dapat
+                 dikatakan seimbang jika balance factornya -1, 0, atau 1.
+                 Balance factor sama dengan ketinggian subtree kiri dikurangi
+                 ketinggian subtree kanan.
                - B Tree
                - B+ Tree
                - Red-black Tree
@@ -51,6 +56,9 @@
        masing-masing subtree dimana root dari masing-masing subtree harus
        merupakan median dari elemen-elemen yang menjadi anak-anaknya agar tree
        menjadi seimbang.
+
+     # Rotasi subtree pada AVL Tree
+
 
      # Keuntungan
 
