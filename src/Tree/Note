@@ -38,7 +38,21 @@
           - N-ary Tree / Generic Tree
 
      # Tree Traversal - inorder, preorder, and postorder
+          - Inorder Traversal
+            Mengunjungi node kiri sampai bertemu leaf, kemudian mengakses nilai
+            yang disimpan, dan dilanjutkan dengan mengunjungi node kanan yang ada
+            pada ketinggian yang sama dengan node yang nilainya baru saja diakses.
+            Setelah mengunjungi node kanan, bila subtree tersebut memiliki node
+            kiri, kembali ke langkah awal sampai semua node terjelajahi.
+          - Preorder Traversal
+            Mengakses nilai dari sebuah node, sambil mengunjungi seluruh subtree
+            kiri hingga mencapai leaf node. Saat mencapai leaf node, kunjungi
+            node kanan pada ketinggian yang sama dan ulangi proses dari awal.
+          - Postorder Traversal
+            Mengunjungi seluruh subtree kiri dan kanan hingga mencapai leaf node,
+            kemudian mengakses nilainya, dan kembali ke langkah awal.
 
+----------------------------------------------------------------------------------
      # Menyeimbangkan Tree
        Untuk `n` elemen terdapat n! kemungkinan urutan tree untuk dibuat.
        Menyeimbangkan tree dapat dilakukan dengan menyortir seluruh elemen dengan

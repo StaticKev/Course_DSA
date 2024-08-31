@@ -2,6 +2,9 @@
 
      Array merupakan struktur data yang paling sederhana, dimana setiap nilai
      disimpan secara berurutan. Array tergolong sebagai linear data structure.
+     Array memiliki keunggulan dalam mengakses indeks tertentu dengan cepat
+     dengan menggunakan indeks. Yaitu dengan menambahkan indeks pada alamat dari
+     elemen pertama pada sebuah array untuk mengakses elemen ke-n (n > 1).
 
      # Sebuah struktur data yang:
           - Menyimpan sekumpulan data dengan tipe yang sama (homogen).
@@ -11,7 +14,7 @@
           - Dikategorikan sebagai non-primitive, composite data type.
 
      # Kentungan:
-          1) Disimpan di stack memory sehingga akses lebih cepat.
+          1) Disimpan di stack memory sehingga akses lebih cepat(tergantung).
           2) Setiap elemen disimpan bersebelahan. Sehingga untuk mengakses elemen
              dengan indeks `n` maka hanya perlu mengambil alamat dari elemen
              pertama dan ditambah dengan `n`. Sehingga kompleksitas dalam

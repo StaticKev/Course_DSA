@@ -7,7 +7,9 @@
      1 atau 2 arah. Selain itu, tidak seperti array, linked list tergolong
      dynamic data structure dimana ukuran dari sebuah linked list dapat
      berubah-ubah. Hal ini karena alokasi memori pada linked list dapat dilakukan
-     secara fleksibel.
+     secara fleksibel. Karena setiap node menyimpan alamat dari node berikutnya
+     maka, untuk jumlah elemen yang sama linked list akan memakan lebih banyak
+     ruang di memori jika dibandingkan dengan array.
 
      # Node Structure
        Sebuah elemen pada linked list dapat diidentifikasi sebagai node, dimana

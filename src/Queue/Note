@@ -13,29 +13,29 @@
         - IsFull: Mengecek apahak queue penuh.
 
      # Jenis-jenis Queue
-        - Input Restricted Queue
-        - Output Restricted Queue
-        - Static Array-Based Queue
-             Queue berbasis array
-             - Circular Queue (Ring Buffer, Array-Based)
-                  Sebuah array-based queue yang hanya dapat enqueue dan deqeueue
-                  sebanyak kapasitas dari queue.
-        - Dynamic Queue (Link List-Based)
-        - Double Ended Queue (Deque)
-        - Priority Queue
-             - Ascending Priority Queue
-             - Descending Priority Queue
+          - Input Restricted Queue
+          - Output Restricted Queue
+          - Static Array-Based Queue
+               - Circular Queue (Ring Buffer, Array-Based)
+                 Sebuah array-based queue yang hanya dapat enqueue dan deqeueue
+                 sebanyak kapasitas dari queue.
+          - Dynamic Queue (Link List-Based)
+          - Double Ended Queue (Deque)
+          - Priority Queue
+               - Ascending Priority Queue
+               - Descending Priority Queue
 
      # Keuntungan
-        - Menerapkan aturan first in first out yang menyerupai sistem antrian.
-        - Memasukkan dan menghapus data dari ujung sangat cepat.
+          - Menerapkan aturan first in first out yang menyerupai sistem
+            antrian.
+          - Memasukkan dan menghapus data dari ujung sangat cepat.
 
      # Kerugian
-        - Ukuran queue harus didefinisikan jika queue diimplementasikan dengan
-          array.
-        - Memasukkan dan menghapus data dari tengah-tengah queue memakan waktu.
-        - Kompleksitas waktu dari pencarian elemen linear.
-
+          - Ukuran queue harus didefinisikan jika queue diimplementasikan dengan
+            array.
+          - Memasukkan dan menghapus data dari tengah-tengah queue memakan waktu.
+          - Kompleksitas waktu dari pencarian elemen linear.
+------------------------------------- Queue --------------------------------------
      # Best/Worst/Average Case time complexity
           Access    | O(1) / O(N) / O(N)
           Search    | O(1) / O(N) / O(N)

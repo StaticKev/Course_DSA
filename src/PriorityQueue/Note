@@ -1,0 +1,41 @@
+-------------------------------------- Tree --------------------------------------
+
+     Tree adalah struktur data non-linear dimana kumpulan nilai yang
+     direpresentasikan oleh node, terhubung satu dengan yang lainnya tanpa adanya
+     loop. Digunakan untuk merepresentasikan struktur hirarki. Hubungan antar
+     node pada sebuah tree adalah parent-child. Dimana parent adalah node yang
+     menunjukkan node lain, sementara node yang ditunjuk oleh parent adalah child
+     node. Sebuah tree diawali dengan root, yaitu sebuah node yang merupakan
+     parent dari seluruh node. Node yang tidak memiliki child disebut dengan
+     leaf. Setiap node dapat menunjuk pada beberapa node sekaligus.
+
+     # Menyeimbangkan Tree
+       Untuk `n` elemen terdapat n! kemungkinan urutan tree untuk dibuat.
+       Menyeimbangkan tree dapat dilakukan dengan menyortir seluruh elemen dengan
+       In-order traversal, mencari median dari elemen-elemen yang tersortir,
+       menjadikannya root, dan memasukkan sisanya dengan mencari median.
+       Penyortiran dapat dilakukan secara iteratif, sementara penyusunan
+       dilakukan dengan rekursif. Dalam penyusunan akan selalu diambil elemen
+       tengah untuk dijadikan sebagai root dari subtree. Indeks yang digunakan
+       untuk menyatakan elemen tengah berbeda untuk tiap subtree. Untuk subtree
+       kiri, diambil median antara elemen pertama sebagai acuan, dan elemen
+       tengah dari hasil penyortiran (dikurangi hingga sama dengan 0). Sementara,
+       untuk subtree kanan, diambil median antara elemen tengah (ditambah hingga
+       sama dengan indeks terakhir) dan elemen terakhir sebagai acuan. Sehingga
+       proses tersebut akan selalu mengambil nilai tengah sebagai root dari
+       masing-masing subtree dimana root dari masing-masing subtree harus
+       merupakan median dari elemen-elemen yang menjadi anak-anaknya agar tree
+       menjadi seimbang.
+
+     # Rotasi subtree pada AVL Tree
+
+
+     # Keuntungan
+
+     # Kerugian
+
+     # Best/Worst/Average Case time complexity
+
+     # Kegunaan
+
+----------------------------------------------------------------------------------
