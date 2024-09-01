@@ -1,41 +1,26 @@
--------------------------------------- Tree --------------------------------------
+-------------------------- Binary Heap & Priority Queue --------------------------
 
-     Tree adalah struktur data non-linear dimana kumpulan nilai yang
-     direpresentasikan oleh node, terhubung satu dengan yang lainnya tanpa adanya
-     loop. Digunakan untuk merepresentasikan struktur hirarki. Hubungan antar
-     node pada sebuah tree adalah parent-child. Dimana parent adalah node yang
-     menunjukkan node lain, sementara node yang ditunjuk oleh parent adalah child
-     node. Sebuah tree diawali dengan root, yaitu sebuah node yang merupakan
-     parent dari seluruh node. Node yang tidak memiliki child disebut dengan
-     leaf. Setiap node dapat menunjuk pada beberapa node sekaligus.
+     # Priority Queue
+       Sebuah struktur data queue dimana elemen yang pertama kali keluar adalah
+       elemen dengan prioritas tertinggi, diikuti dengan urutan memasukkan data
+       ke dalam queue. Sehingga konsep First In First Out hanya berlaku pada
+       elemen-elemen yang memiliki prioritas yang sama. Untuk elemen lain yang
+       memiliki prioritas lebih rendah, maka akan dikeluarkan paling akhir sesuai
+       urutan prioritas. Prioritas dapat dibentuk dengan mempertimbangkan nilai
+       dari masing-masing elemen yang ada pada queue.
 
-     # Menyeimbangkan Tree
-       Untuk `n` elemen terdapat n! kemungkinan urutan tree untuk dibuat.
-       Menyeimbangkan tree dapat dilakukan dengan menyortir seluruh elemen dengan
-       In-order traversal, mencari median dari elemen-elemen yang tersortir,
-       menjadikannya root, dan memasukkan sisanya dengan mencari median.
-       Penyortiran dapat dilakukan secara iteratif, sementara penyusunan
-       dilakukan dengan rekursif. Dalam penyusunan akan selalu diambil elemen
-       tengah untuk dijadikan sebagai root dari subtree. Indeks yang digunakan
-       untuk menyatakan elemen tengah berbeda untuk tiap subtree. Untuk subtree
-       kiri, diambil median antara elemen pertama sebagai acuan, dan elemen
-       tengah dari hasil penyortiran (dikurangi hingga sama dengan 0). Sementara,
-       untuk subtree kanan, diambil median antara elemen tengah (ditambah hingga
-       sama dengan indeks terakhir) dan elemen terakhir sebagai acuan. Sehingga
-       proses tersebut akan selalu mengambil nilai tengah sebagai root dari
-       masing-masing subtree dimana root dari masing-masing subtree harus
-       merupakan median dari elemen-elemen yang menjadi anak-anaknya agar tree
-       menjadi seimbang.
-
-     # Rotasi subtree pada AVL Tree
-
-
-     # Keuntungan
-
-     # Kerugian
-
-     # Best/Worst/Average Case time complexity
-
-     # Kegunaan
+     # Binary Heap
+       Sebuah struktur data tree dimana nilai dari setiap node yang ada harus
+       selalu lebih kecil/besar daripada child node nya. Ada dua jenis binary
+       heap yaitu Min Heap yang setiap node nya selalu lebih kecil daripada child
+       nya dan Max Heap yang setiap node nya selalu lebih besar daripada child
+       nya. Binary heap adalah sebuah Complete Binary Tree dimana, pada Complete
+       Binary Tree setiap node pada ketinggian yang sama harus memiliki 2 child,
+       kecuali node pada ketinggian terakhir, dan tidak boleh ada celah diantara
+       leaf pada tree tersebut. Sehingga meskipun node pada ketinggian terakhir
+       dapat memiliki kurang dari 2 child namun, jika ada child, maka child harus
+       diisi dari kiri ke kanan tanpa melewatkan satu pun leaf yang bernilai null
+       sebelumnya (seluruh leaf pada sebelah kiri sebuah node tidak boleh ada yang
+       null).
 
 ----------------------------------------------------------------------------------
