@@ -9,6 +9,30 @@
      parent dari seluruh node. Node yang tidak memiliki child disebut dengan
      leaf. Setiap node dapat menunjuk pada beberapa node sekaligus.
 
+     # Properti & terminologi dari struktur data Tree
+          - Parent node: Node yang memiliki child.
+          - Child node: Node yang merupakan penerus langsung dari sebuah node.
+          - Root: Node yang menjadi parent dari semua node. Hanya ada satu root
+            pada sebuah tree.
+          - Leaf: Node yang tidak memiliki child.
+          - Ancestor of a node: Node terdahulu dari sebuah node.
+          - Descendant: Node yang merupakan child dari child dari child ... dari
+            sebuah node.
+          - Sibling: Node yang memiliki parent yang sama dengan sebuah node.
+          - Level of a node: Jumlah path yang harus dilalui untuk mencapai node
+            tersebut. Misal root node memiliki level 0.
+          - Internal node: Node yang memiliki setidaknya satu child.
+          - Neighbour of a node: Parent atau child dari sebuah node. Memiliki
+            selisih 1 level dengan sebuah node.
+          - Subtree: Node manapun dari sebuah tree, bersama penerusnya.
+          - Edge: Hubungan antara 2 node.
+          - Depth of the node: Jarak antara sebuah node terhadap node lain.
+          - Height of the node: Jarak antara sebuah node terhadap leaf dari
+            sebuah tree.
+          - Height of the tree: Jarak terjauh antara root dengan leaf dari
+            sebuah tree.
+          - Degree of a node: Jumlah child node dari sebuah node.
+
      # Jenis-jenis tree
           - Binary Tree
                - Binary Search Tree: Binary tree yang mengikuti sebuah aturan
@@ -52,7 +76,6 @@
             Mengunjungi seluruh subtree kiri dan kanan hingga mencapai leaf node,
             kemudian mengakses nilainya, dan kembali ke langkah awal.
 
-----------------------------------------------------------------------------------
      # Menyeimbangkan Tree
        Untuk `n` elemen terdapat n! kemungkinan urutan tree untuk dibuat.
        Menyeimbangkan tree dapat dilakukan dengan menyortir seluruh elemen dengan
@@ -72,15 +95,74 @@
        menjadi seimbang.
 
      # Rotasi subtree pada AVL Tree
+       Untuk menyeimbangkan sebuah binary tree, harus diidentifikasi terlebih
+       dahulu berat dari sebuah subtree lebih condong ke mana. Sebuah tree
+       dikatakan tidak seimbang apabila setiap node yang ada pada tree tersebut
+       memiliki balance factor selain -1, 0, atau 1. Jika sebuah subtree memiliki
+       balance factor >1 maka ia condong ke kiri, sehingga harus dilakukan rotasi
+       ke kanan, relatif terhadap root dari subtree tersebut. Jika sebuah subtree
+       memiliki balance factor <1 maka ia condong ke kanan, sehingga harus
+       dilakukan rotasi ke kiri, relatif terhadap root dari subtree tersebut.
+       Berdasarkan balance factor yang mungkin, ketidakseimbangan dapat dibagi
+       menjadi LL, LR, RR, dan RR imbalance. LL dan RR hanya memerlukan beberapa
+       rotasi satu arah, yaitu berlawanan arah dengan ketidakseimbangannya.
+       Sementara LR dan RL memerlukan beberapa rotasi yang berbeda arah. Yang
+       melibatkan root dari subtree yang memiliki balance factor yang tidak
+       seimbang, dengan subtree kiri atau kanan sesuai balance factornya.
+       TEMP NOTE: Keknya aturan rotasi ini berlaku saat insertion atau deletion.
+       Soalnya asumsiku, untuk performa algoritma rotasi ngak akan cepet-cepet
+       banget. Bayangin aja untuk skenario balancing seluruh tree, harus rotasi
+       semua node, dimana tiap rotasi butuh ngecek kedalaman subtree which udah
+       `log n`. Sementara jumlah rotasinya cukup banyak. Kalau dibandingin
+       algoritma untuk bikin BST seimbang, yang pakai array itu, time complexity
+       `log n` cuma sekali, waktu traversal aja. Sementara buat insertion nya
+       linear. Dari namanya udah jelash seh, `Self Balancing Tree` dimana
+       jelas-jelas proses balancing itu pasti terjadi saat insertion/deletion.
+       Ok setelah lihat video nya, emang kek gitu, jadi algoritma ini bukan untuk
+       balancing seluruh tree, tapi cuma balancing node yang balance factornya
+       ndak sesuai setelah insertion/deletion, dimana node tersebut dijadikan
+       titik awal, poros untuk rotasi. Sementara rotasi dapat dilakukan sesuai
+       ketidakseimbangannya misal, RL imbalance dapat dilakukan dengan melakukan
+       RL rotation. Node pada AVL tree perlu memiliki sebuah variabel untuk
+       menyimpan ketinggian sebuah node maupun balance factornya. Insertion maupun
+       deletion pada AVL tree perlu traversal toh. Nah, setelah insertion/deletion
+       berhasil, kan balik lagi tuh function call nya. Itu adalah saat dimana
+       balance factor dihitung.
+
+       Asumsi 1
+       (Apakah rotasi langung dilakukan tepat setelah balance factor dihitung?
+       Misal saat balance factor pada node dengan ketinggian n dihitung dimana n
+       lebih dari 0, jadi kan dari bawah tuh ngitungnya. Meskipun diatasnya masih
+       ada node yang bf nya ndak sesuai, yang ditemuin duluan yang akan dirotasi.)
+
+       Left-heavy situation (LL Imbalance) -> BF > 1
+       Right-heavy situation (RR Imbalance) -> BF < -1
+       Left-right situation (LR Imbalance) -> Parent BF > 1 & negative child BF
+       Right-left situation (RL Imbalance) -> Parent BF < -1 & positive child BF
 
 
-     # Keuntungan
+----------------------------------------------------------------------------------
 
-     # Kerugian
+     # Keuntungan (overall)
+          - Dapat menyimpan elemen-elemen dalam struktur hirarki.
+          - Memiliki waktu akses yang lebih cepat daripada linked list tetapi
+            lebih lambat dari array.
+          - Memiliki waktu insertion yang lebih cepat daripada array dan lebih
+            lambat dari unordered linked list(?).
+          - Merupakan dynamic data structure.
+          - Menawarkan pencarian yang efisien tergantung tipe tree dan penggunaan.
+          - Memiliki sifat rekursif, sehingga memudahkan dalam penjelajahan dan
+            manipulasi data.
+
+     # Kerugian (overall)
+          - Ketidakseimbangan dari sebuah tree dapat mempengaruhi peforma.
+          - Tree membutuhkan lebih banyak ruang di memori(?).
+          - Implementasi dan manipulasi yang cukup kompleks.
 
      # Best/Worst/Average Case time complexity
 
      # Kegunaan
+          - 
 
 ----------------------------------------------------------------------------------
 

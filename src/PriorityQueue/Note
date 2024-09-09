@@ -23,4 +23,21 @@
        sebelumnya (seluruh leaf pada sebelah kiri sebuah node tidak boleh ada yang
        null).
 
+     # Representasi Binary Heap Dengan Arary
+       Cara merepresentasikan binary heap dengan array yaitu dengan melakukan
+       level order traversal pada sebuah tree dan menyimpan nilai-nilainya pada
+       array, dimulai dari indeks 1 (bukan 0). Lantas bagaimana cara menemukan
+       child dari sebuah node pada binary heap? Child dari sebuah node pada
+       binary heap dapat ditemukan dengan menggunakan rumus:
+          - Left: 2k
+          - Right: 2k + 1
+       dimana `k` adalah indeks dari parent node. Rumus ini didapat dengan
+       memperhatikan posisi elemen-elemen yang telah diakses dengan level order
+       traversal. Sementara untuk menemukan parent dari sebuah indeks, dapat
+       digunakan rumus:
+          k / 2
+       dimana k adalah indeks dari child node. Hasil pembagian dibulatkan ke
+       bawah. Rumus diatas hanya dapat digunakan jika elemen pertama dimasukkan
+       pada indeks 1.
+
 ----------------------------------------------------------------------------------
