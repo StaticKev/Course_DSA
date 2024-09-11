@@ -104,44 +104,34 @@
        memiliki balance factor <1 maka ia condong ke kanan, sehingga harus
        dilakukan rotasi ke kiri, relatif terhadap root dari subtree tersebut.
        Berdasarkan balance factor yang mungkin, ketidakseimbangan dapat dibagi
-       menjadi LL, LR, RR, dan RR imbalance. LL dan RR hanya memerlukan beberapa
-       rotasi satu arah, yaitu berlawanan arah dengan ketidakseimbangannya.
-       Sementara LR dan RL memerlukan beberapa rotasi yang berbeda arah. Yang
+       menjadi LL, LR, RR, dan RR imbalance. LL dan RR hanya memerlukan single
+       rotation, yaitu rotasi sekali berlawanan arah dengan ketidakseimbangannya.
+       Sementara LR dan RL memerlukan double rotation yang berbeda arah yang
        melibatkan root dari subtree yang memiliki balance factor yang tidak
-       seimbang, dengan subtree kiri atau kanan sesuai balance factornya.
-       TEMP NOTE: Keknya aturan rotasi ini berlaku saat insertion atau deletion.
-       Soalnya asumsiku, untuk performa algoritma rotasi ngak akan cepet-cepet
-       banget. Bayangin aja untuk skenario balancing seluruh tree, harus rotasi
-       semua node, dimana tiap rotasi butuh ngecek kedalaman subtree which udah
-       `log n`. Sementara jumlah rotasinya cukup banyak. Kalau dibandingin
-       algoritma untuk bikin BST seimbang, yang pakai array itu, time complexity
-       `log n` cuma sekali, waktu traversal aja. Sementara buat insertion nya
-       linear. Dari namanya udah jelash seh, `Self Balancing Tree` dimana
-       jelas-jelas proses balancing itu pasti terjadi saat insertion/deletion.
-       Ok setelah lihat video nya, emang kek gitu, jadi algoritma ini bukan untuk
-       balancing seluruh tree, tapi cuma balancing node yang balance factornya
-       ndak sesuai setelah insertion/deletion, dimana node tersebut dijadikan
-       titik awal, poros untuk rotasi. Sementara rotasi dapat dilakukan sesuai
-       ketidakseimbangannya misal, RL imbalance dapat dilakukan dengan melakukan
-       RL rotation. Node pada AVL tree perlu memiliki sebuah variabel untuk
-       menyimpan ketinggian sebuah node maupun balance factornya. Insertion maupun
-       deletion pada AVL tree perlu traversal toh. Nah, setelah insertion/deletion
+       seimbang, dengan subtree kiri atau kanan sesuai balance factornya. Aturan
+       rotasi ini hanya berlaku pada insertion dan deletion. Karena memang nature
+       nya si AVL tree itu 'self-balancing' yang berarti tiap kali ada insertion
+       atau deletion, dia akan secara otomatis menjaga keseimbangannya. Insertion
+       maupun deletion pada BST perlu traversal toh. Nah, setelah insertion/deletion
        berhasil, kan balik lagi tuh function call nya. Itu adalah saat dimana
        balance factor dihitung.
+          - Left-heavy situation (LL Imbalance) -> BF > 1
+          - Right-heavy situation (RR Imbalance) -> BF < -1
+          - Left-right situation (LR Imbalance) -> Parent BF > 1 & negative child BF
+          - Right-left situation (RL Imbalance) -> Parent BF < -1 & positive child BF
 
-       Asumsi 1
-       (Apakah rotasi langung dilakukan tepat setelah balance factor dihitung?
-       Misal saat balance factor pada node dengan ketinggian n dihitung dimana n
-       lebih dari 0, jadi kan dari bawah tuh ngitungnya. Meskipun diatasnya masih
-       ada node yang bf nya ndak sesuai, yang ditemuin duluan yang akan dirotasi.)
+     # Perbandingan AVL Tree dengan BST
+       AVL Tree juga termasuk dalam BST. Yang menjadi pembeda hanya pada AVL Tree,
+       keseimbangan tree terus dijaga dengan memastikan balance factor dari setiap
+       node dalam rentang -1 hingga 1. Dengan struktur tree yang seimbang, maka
+       worst case time complexity dari semua operasi dapat dikurangi hingga 'log n',
+       mengingat seluruh operasi pada BST melibatkan proses penjelajahan untuk
+       membandingkan nilai dari node yang dikunjungi. Sehingga dengan menyeimbangkan
+       tree maka, ketinggian dari tree dapat diminimalisir dan proses penjelajahan
+       akan lebih efisien.
 
-       Left-heavy situation (LL Imbalance) -> BF > 1
-       Right-heavy situation (RR Imbalance) -> BF < -1
-       Left-right situation (LR Imbalance) -> Parent BF > 1 & negative child BF
-       Right-left situation (RL Imbalance) -> Parent BF < -1 & positive child BF
-
-
-----------------------------------------------------------------------------------
+     # B-Tree
+       ___
 
      # Keuntungan (overall)
           - Dapat menyimpan elemen-elemen dalam struktur hirarki.
@@ -156,13 +146,25 @@
 
      # Kerugian (overall)
           - Ketidakseimbangan dari sebuah tree dapat mempengaruhi peforma.
-          - Tree membutuhkan lebih banyak ruang di memori(?).
+          - Tree membutuhkan lebih banyak ruang di memori untuk menyimpan reference.
           - Implementasi dan manipulasi yang cukup kompleks.
 
-     # Best/Worst/Average Case time complexity
+     # Best/Worst/Average Case time complexity -> BST
+          Access    | O(log N) / O(N) / O(log N)
+          Search    | O(log N) / O(N) / O(log N)
+          Insertion | O(log N) / O(N) / O(log N)
+          Deletion  | O(log N) / O(N) / O(log N)
+
+     # Best/Worst/Average Case time complexity -> AVL Tree
+          Access    | O(log N) / O(log N) / O(log N)
+          Search    | O(log N) / O(log N) / O(log N)
+          Insertion | O(log N) / O(log N) / O(log N)
+          Deletion  | O(log N) / O(log N) / O(log N)
 
      # Kegunaan
-          - 
+          - Membuat job tree.
+          - Mendefinisikan sistem penyimpanan file dalam folder komputer.
+          - Berperan dalam making system.
 
 ----------------------------------------------------------------------------------
 

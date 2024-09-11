@@ -35,7 +35,7 @@
             array.
           - Memasukkan dan menghapus data dari tengah-tengah queue memakan waktu.
           - Kompleksitas waktu dari pencarian elemen linear.
-------------------------------------- Queue --------------------------------------
+
      # Best/Worst/Average Case time complexity
           Access    | O(1) / O(N) / O(N)
           Search    | O(1) / O(N) / O(N)

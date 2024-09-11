@@ -232,7 +232,7 @@ class MyAvlTree<T extends Comparable<T>> {
         // height sebuah node adalah 0. Sehingga jika null mengembalikan 0,
         // maka akan sama dengan node yang memiliki ketinggian 0. Dimana
         // saat perhitungan balance factor dilakukan untuk sebuah node yang
-        // hanya memiliki satu child, balance factornya akan 0, yang
+        // hanya memiliki satu child, balance factornya adalah 0, yang
         // seharusnya 1 atau -1 karena memiliki child.
         return node != null ? node.height : -1;
     }
