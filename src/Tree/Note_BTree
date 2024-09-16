@@ -1,0 +1,261 @@
+========================= B-Tree Insertion Visualization =========================
+
+     Kasus: Memasukkan angka 1-30 secara berurutan dari kecil ke besar (t = 3).
+
+==================================================================================
+
+     Memasukkan angka 1
+     - Kondisi root masih null
+     - Inisialisasi root
+     - Masukkan angka 1
+
+[1]
+
+     Memasukkan angka 2
+     - Mulai traversal hingga leaf node
+     - Root adalah leaf, langsung masukkan angka 2
+
+[1, 2]
+
+     Memasukkan angka 3
+     - Mulai traversal hingga leaf node
+     - Root adalah leaf, langsung masukkan angka 3
+
+[1, 2, 3]
+
+     Memasukkan angka 4
+     - Mulai traversal hingga leaf node
+     - Root adalah leaf, langsung masukkan angka 4
+
+[1, 2, 3, 4]
+
+     Memasukkan angka 5
+     - Mulai traversal hingga leaf node
+     - Root adalah leaf, langsung masukkan angka 5
+
+[1, 2, 3, 4, 5]    -> Max
+
+     Memasukkan angka 6
+     - Mulai traversal hingga leaf node
+     - Root adalah leaf, namun penuh
+     - Buat root node baru, isLeaf dari root dibuat false, split node, promote 3
+       ke parent node.
+     - Masukkan angka 6
+
+[     3     ]
+[1, 2] [4, 5]
+
+[     3        ]
+[1, 2] [4, 5, 6]
+
+     Memasukkan angka 7
+     - Mulai traversal hingga leaf node
+     - Masukkan angka 7
+
+[     3           ]
+[1, 2] [4, 5, 6, 7]
+
+     Memasukkan angka 8
+     - Mulai traversal hingga leaf node
+     - Masukkan angka 8
+
+[     3              ]
+[1, 2] [4, 5, 6, 7, 8]   -> Max
+
+     Memasukkan angka 9
+     - Mulai traversal hingga leaf node
+     - Leaf node penuh, split leaf node, promote 6 ke parent
+     - Masukkan angka 9
+
+[     3,     6        ]
+[1, 2] [4, 5] [7, 8, 9]
+
+     Memasukkan angka 10
+     - Mulai traversal hingga leaf node
+     - Masukkan angka 10
+
+[     3,     6            ]
+[1, 2] [4, 5] [7, 8, 9, 10]
+
+     Memasukkan angka 11
+     - Mulai traversal hingga leaf node
+     - Masukkan angka 11
+
+[     3,     6                ]
+[1, 2] [4, 5] [7, 8, 9, 10, 11]   -> Max
+
+     Memasukkan angka 12
+     - Mulai traversal hingga leaf node
+     - Leaf node penuh, split leaf node, promote 9 ke parent
+     - Masukkan angka 12
+
+[3, 6, 9]
+[1, 2] [4, 5] [7, 8] [10, 11, 12]
+
+     Memasukkan angka 13
+     - Mulai traversal hingga leaf node
+     - Masukkan angka 13
+
+[     3,     6,     9               ]
+[1, 2] [4, 5] [7, 8] [10, 11, 12, 13]
+
+     Memasukkan angka 14
+     - Mulai traversal hingga leaf node
+     - Masukkan angka 14
+
+[     3,     6,     9                   ]
+[1, 2] [4, 5] [7, 8] [10, 11, 12, 13, 14]   -> Max
+
+     Memasukkan angka 15
+     - Mulai traversal hingga leaf node
+     - Leaf node penuh, split leaf node, promote 12 ke parent
+     - Masukkan angka 15
+
+[     3,     6,     9,       12          ]
+[1, 2] [4, 5] [7, 8] [10, 11] [13, 14, 15]
+
+     Memasukkan angka 16
+     - Mulai traversal hingga leaf node
+     - Masukkan angka 16
+
+[     3,     6,     9,       12              ]
+[1, 2] [4, 5] [7, 8] [10, 11] [13, 14, 15, 16]
+
+     Memasukkan angka 17
+     - Mulai traversal hingga leaf node
+     - Masukkan angka 17
+
+[     3,     6,     9,       12                  ]
+[1, 2] [4, 5] [7, 8] [10, 11] [13, 14, 15, 16, 17]   -> Max
+
+     Memasukkan angka 18
+     - Mulai traversal hingga leaf node
+     - Leaf node penuh, split leaf node, promote 15 ke parent
+     - Masukkan angka 18
+
+[     3,     6,     9,      12,       15          ]
+[1, 2] [4, 5] [7, 8] [10, 11] [13, 14] [16, 17, 18]
+
+     Memasukkan angka 19
+     - Mulai traversal hingga leaf node
+     - Masukkan angka 19
+
+[     3,     6,     9,       12,      15              ]
+[1, 2] [4, 5] [7, 8] [10, 11] [13, 14] [16, 17, 18, 19]
+
+     Memasukkan angka 20
+     - Mulai traversal hingga leaf node
+     - Masukkan angka 20
+
+[     3,     6,     9,       12,      15                  ]     -> Max
+[1, 2] [4, 5] [7, 8] [10, 11] [13, 14] [16, 17, 18, 19, 20]     -> Max
+
+     Memasukkan angka 21
+     - Mulai traversal hingga leaf node
+     - Leaf node penuh, split tidak bisa dilakukan karena parent juga sudah full
+     - Cari predecessor yang belum penuh, dan lakukan split pada child dari
+       predecessor tersebut.
+     - Jika predecessor sudah penuh semua maka, lakukan split pada root.
+     - Masukkan angka 21
+     # QUESTION: Cara tau predecessor udah penuh semua gmn?
+       Kek gini?
+            - Method insert dibuat mengembalikan boolean, jika berhasil memasukkan
+              return true. Jika gagal memasukkan return false dan laukkan split
+              pada predecessor.
+            - Base case: Return false jika node full && node adalah leaf
+            - Insertion dilakukan sebagai bagian dari pengkondisian.
+              boolean success = insert(childNode, value);
+              if (success) // return true
+              else if (!success && node.keysCount != node.keys.length) // Lakukan split pada child dari node ini
+              else if (!success && node.keysCount == node.keys.length && node != root) // return false
+              else if (!success && node.keysCount == node.keys.length && node != root) // root split
+
+[                   9                                     ]
+[     3,     6     ] [       12,      15                  ]
+[1, 2] [4, 5] [7, 8] [10, 11] [13, 14] [16, 17, 18, 19, 20]
+
+[                   9                                      ]
+[     3,     6     ] [       12,      15,      18          ]
+[1, 2] [4, 5] [7, 8] [10, 11] [13, 14] [16, 17] [19, 20, 21]
+
+     Memasukkan angka 22
+     - Mulai traversal hingga leaf node
+     - Masukkan angka 22
+
+[                   9                                          ]
+[     3,     6     ] [       12,      15,      18              ]
+[1, 2] [4, 5] [7, 8] [10, 11] [13, 14] [16, 17] [19, 20, 21, 22]
+
+     Memasukkan angka 23
+     - Mulai traversal hingga leaf node
+     - Masukkan angka 23
+
+[                   9                                              ]
+[     3,     6     ] [       12,      15,       17                 ]
+[1, 2] [4, 5] [7, 8] [10, 11] [13, 14] [16, 17] [19, 20, 21, 22, 23]
+
+     Memasukkan angka 24
+     - Mulai traversal hingga leaf node
+     - Leaf node penuh, split leaf node, promote 21 ke parent
+     - Masukkan angka 24
+
+[                   9                                               ]
+[     3,     6     ] [       12,      15,      18       21          ]
+[1, 2] [4, 5] [7, 8] [10, 11] [13, 14] [16, 17] [19, 20] [22, 23, 24]
+
+     Memasukkan angka 25
+     - Mulai traversal hingga leaf node
+     - Masukkan angka 25
+
+[                   9                                               ]
+[     3,     6     ] [       12,      15,      18       21          ]
+[1, 2] [4, 5] [7, 8] [10, 11] [13, 14] [16, 17] [19, 20] [22, 23, 24, 25]
+
+     Memasukkan angka 26
+     - Mulai traversal hingga leaf node
+     - Masukkan angka 26
+
+[                   9                                               ]
+[     3,     6     ] [       12,      15,      18       21          ]
+[1, 2] [4, 5] [7, 8] [10, 11] [13, 14] [16, 17] [19, 20] [22, 23, 24, 25, 26]
+
+     Memasukkan angka 27
+     - Mulai traversal hingga leaf node
+     - Leaf node penuh, split leaf node, promote 24 ke parent
+     - Masukkan angka 27
+
+[                   9                                                        ]
+[     3,     6     ] [       12,      15,      18      21       24           ]
+[1, 2] [4, 5] [7, 8] [10, 11] [13, 14] [16, 17] [19, 20] [22, 23] [25, 26, 27]
+
+     Memasukkan angka 28
+     - Mulai traversal hingga leaf node
+     - Masukkan angka 28
+
+[                   9                                                            ]
+[     3,     6     ] [       12,      15,      18      21       24               ]
+[1, 2] [4, 5] [7, 8] [10, 11] [13, 14] [16, 17] [19, 20] [22, 23] [25, 26, 27, 28]
+
+     Memasukkan angka 29
+     - Mulai traversal hingga leaf node
+     - Masukkan angka 29
+
+[                   9                                                                ]
+[     3,     6     ] [       12,      15,      18      21       24                   ]
+[1, 2] [4, 5] [7, 8] [10, 11] [13, 14] [16, 17] [19, 20] [22, 23] [25, 26, 27, 28, 29]
+
+     Memasukkan angka 30
+     - Mulai traversal hingga leaf node
+     - Leaf node penuh, predecessornya full semua kecuali root
+     - Maka split child terakhir sebelum root, dan seluruh node yang telah dijelajahi
+     - Setelah splitting selesai, traverse ulang dan masukkan 30 (ndak efektif?)
+
+[                   9,                         18                                    ]
+[     3,     6     ] [       12,      15      ] [       21,      24                  ]
+[1, 2] [4, 5] [7, 8] [10, 11] [13, 14] [16, 17] [19, 20] [22, 23] [25, 26, 27, 28, 29]
+
+[                   9,                         18                                     ]
+[     3,     6     ] [       12,      15      ] [       21,      24,      27          ]
+[1, 2] [4, 5] [7, 8] [10, 11] [13, 14] [16, 17] [19, 20] [22, 23] [25, 26] [28, 29, 30]
+
+==================================================================================

@@ -1,4 +1,4 @@
-------------------------------------- Stack --------------------------------------
+===================================== Stack ======================================
 
      Stack, sesuai dengan namanya yang berarti tumpukan, adalah struktur data
      linear yang elemen-elemen didalamnya dioperasikan dengan urutan Last-In-
@@ -66,6 +66,6 @@
           - Sejarah pencarian pada browser
           - Pemanggilan fungsi (Urutan eksekusi fungsi pada stack memory)
 
-----------------------------------------------------------------------------------
+==================================================================================
 
 https://www.geeksforgeeks.org/stack-data-structure/

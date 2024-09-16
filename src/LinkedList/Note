@@ -1,4 +1,4 @@
----------------------------------- Linked List -----------------------------------
+================================== Linked List ===================================
 
      Struktur data linear yang elemen-elemennya tidak disimpan di lokasi yang
      bersebelahan, melainkan dihubungkan dengan pointer. Hal ini yang membuat
@@ -73,7 +73,7 @@
             linked list.
      Find more here: https://www.geeksforgeeks.org/applications-of-linked-list-data-structure/
 
-----------------------------------------------------------------------------------
+==================================================================================
 
 https://www.geeksforgeeks.org/data-structures/linked-list/singly-linked-list/
 https://www.geeksforgeeks.org/data-structures/linked-list/doubly-linked-list/

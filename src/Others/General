@@ -1,4 +1,4 @@
---------------------------- Algoritma & Struktur Data ----------------------------
+=========================== Algoritma & Struktur Data ============================
 
 Sebuah cara untuk menyimpan data secara struktural sedemikian rupa sehingga data
 dapat diatur, disimpan, dan dikelola secara efisien di dalam memori. Dengan
@@ -57,6 +57,6 @@ atomik yang sejenis (biasanya).
    4) Cara terbaik untuk mengorganisir data.
    5) Managemen reservasi memori dan penyimpanan.
 
-----------------------------------------------------------------------------------
+==================================================================================
 
 https://www.programiz.com/dsa/data-structure-types#:~:text=Basically%2C%20data%20structures%20are%20divided,Non%2Dlinear%20data%20structure

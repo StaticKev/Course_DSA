@@ -1,4 +1,4 @@
-------------------------------------- Queue --------------------------------------
+===================================== Queue ======================================
 
      Queue (antrian) adalah struktur data linear yang mengikuti aturan
      First-In-First-Out (FIFO) dalam manipulasinya. Elemen dimasukkan kedalam
@@ -47,6 +47,6 @@
           - Kalkulator
           - (Banyak bgt...)
 
-----------------------------------------------------------------------------------
+==================================================================================
 
 https://medium.com/techie-delight/queue-data-structure-practice-problems-and-interview-questions-f459bf0578db

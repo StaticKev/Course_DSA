@@ -1,4 +1,4 @@
-------------------------------------- Array --------------------------------------
+===================================== Array ======================================
 
      Array merupakan struktur data yang paling sederhana, dimana setiap nilai
      disimpan secara berurutan. Array tergolong sebagai linear data structure.
@@ -37,6 +37,6 @@
           Insertion | O(1) / O(N) / O(N)
           Deletion  | O(1) / O(N) / O(N)
 
-----------------------------------------------------------------------------------
+==================================================================================
 
 https://www.geeksforgeeks.org/time-complexities-of-different-data-structures/

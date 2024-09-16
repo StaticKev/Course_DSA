@@ -1,4 +1,4 @@
--------------------------------------- Tree --------------------------------------
+====================================== Tree ======================================
 
      Tree adalah struktur data non-linear dimana kumpulan nilai yang
      direpresentasikan oleh node, terhubung satu dengan yang lainnya tanpa adanya
@@ -94,45 +94,6 @@
        merupakan median dari elemen-elemen yang menjadi anak-anaknya agar tree
        menjadi seimbang.
 
-     # Rotasi subtree pada AVL Tree
-       Untuk menyeimbangkan sebuah binary tree, harus diidentifikasi terlebih
-       dahulu berat dari sebuah subtree lebih condong ke mana. Sebuah tree
-       dikatakan tidak seimbang apabila setiap node yang ada pada tree tersebut
-       memiliki balance factor selain -1, 0, atau 1. Jika sebuah subtree memiliki
-       balance factor >1 maka ia condong ke kiri, sehingga harus dilakukan rotasi
-       ke kanan, relatif terhadap root dari subtree tersebut. Jika sebuah subtree
-       memiliki balance factor <1 maka ia condong ke kanan, sehingga harus
-       dilakukan rotasi ke kiri, relatif terhadap root dari subtree tersebut.
-       Berdasarkan balance factor yang mungkin, ketidakseimbangan dapat dibagi
-       menjadi LL, LR, RR, dan RR imbalance. LL dan RR hanya memerlukan single
-       rotation, yaitu rotasi sekali berlawanan arah dengan ketidakseimbangannya.
-       Sementara LR dan RL memerlukan double rotation yang berbeda arah yang
-       melibatkan root dari subtree yang memiliki balance factor yang tidak
-       seimbang, dengan subtree kiri atau kanan sesuai balance factornya. Aturan
-       rotasi ini hanya berlaku pada insertion dan deletion. Karena memang nature
-       nya si AVL tree itu 'self-balancing' yang berarti tiap kali ada insertion
-       atau deletion, dia akan secara otomatis menjaga keseimbangannya. Insertion
-       maupun deletion pada BST perlu traversal toh. Nah, setelah insertion/deletion
-       berhasil, kan balik lagi tuh function call nya. Itu adalah saat dimana
-       balance factor dihitung.
-          - Left-heavy situation (LL Imbalance) -> BF > 1
-          - Right-heavy situation (RR Imbalance) -> BF < -1
-          - Left-right situation (LR Imbalance) -> Parent BF > 1 & negative child BF
-          - Right-left situation (RL Imbalance) -> Parent BF < -1 & positive child BF
-
-     # Perbandingan AVL Tree dengan BST
-       AVL Tree juga termasuk dalam BST. Yang menjadi pembeda hanya pada AVL Tree,
-       keseimbangan tree terus dijaga dengan memastikan balance factor dari setiap
-       node dalam rentang -1 hingga 1. Dengan struktur tree yang seimbang, maka
-       worst case time complexity dari semua operasi dapat dikurangi hingga 'log n',
-       mengingat seluruh operasi pada BST melibatkan proses penjelajahan untuk
-       membandingkan nilai dari node yang dikunjungi. Sehingga dengan menyeimbangkan
-       tree maka, ketinggian dari tree dapat diminimalisir dan proses penjelajahan
-       akan lebih efisien.
-
-     # B-Tree
-       ___
-
      # Keuntungan (overall)
           - Dapat menyimpan elemen-elemen dalam struktur hirarki.
           - Memiliki waktu akses yang lebih cepat daripada linked list tetapi
@@ -146,7 +107,8 @@
 
      # Kerugian (overall)
           - Ketidakseimbangan dari sebuah tree dapat mempengaruhi peforma.
-          - Tree membutuhkan lebih banyak ruang di memori untuk menyimpan reference.
+          - Tree membutuhkan lebih banyak ruang di memori untuk menyimpan
+            reference.
           - Implementasi dan manipulasi yang cukup kompleks.
 
      # Best/Worst/Average Case time complexity -> BST
@@ -166,6 +128,79 @@
           - Mendefinisikan sistem penyimpanan file dalam folder komputer.
           - Berperan dalam making system.
 
-----------------------------------------------------------------------------------
+------------------------------------ AVL Tree ------------------------------------
+
+     # Perbandingan AVL Tree dengan BST
+       AVL Tree juga termasuk dalam BST. Yang menjadi pembeda hanya pada AVL Tree,
+       keseimbangan tree terus dijaga dengan memastikan balance factor dari setiap
+       node dalam rentang -1 hingga 1. Dengan struktur tree yang seimbang, maka
+       worst case time complexity dari semua operasi dapat dikurangi hingga
+       'log n', mengingat seluruh operasi pada BST melibatkan proses penjelajahan
+       untuk membandingkan nilai dari node yang dikunjungi. Sehingga dengan
+       menyeimbangkan tree maka, ketinggian dari tree dapat diminimalisir dan
+       proses penjelajahan akan lebih efisien.
+
+     # Rotasi subtree pada AVL Tree
+       Untuk menyeimbangkan sebuah binary tree, harus diidentifikasi terlebih
+       dahulu berat dari sebuah subtree lebih condong ke mana. Sebuah tree
+       dikatakan tidak seimbang apabila setiap node yang ada pada tree tersebut
+       memiliki balance factor selain -1, 0, atau 1. Jika sebuah subtree memiliki
+       balance factor >1 maka ia condong ke kiri, sehingga harus dilakukan rotasi
+       ke kanan, relatif terhadap root dari subtree tersebut. Jika sebuah subtree
+       memiliki balance factor <1 maka ia condong ke kanan, sehingga harus
+       dilakukan rotasi ke kiri, relatif terhadap root dari subtree tersebut.
+       Berdasarkan balance factor yang mungkin, ketidakseimbangan dapat dibagi
+       menjadi LL, LR, RR, dan RR imbalance. LL dan RR hanya memerlukan single
+       rotation, yaitu rotasi sekali berlawanan arah dengan ketidakseimbangannya.
+       Sementara LR dan RL memerlukan double rotation yang berbeda arah yang
+       melibatkan root dari subtree yang memiliki balance factor yang tidak
+       seimbang, dengan subtree kiri atau kanan sesuai balance factornya. Aturan
+       rotasi ini hanya berlaku pada insertion dan deletion. Karena memang nature
+       nya si AVL tree itu 'self-balancing' yang berarti tiap kali ada insertion
+       atau deletion, dia akan secara otomatis menjaga keseimbangannya. Insertion
+       maupun deletion pada BST perlu traversal toh. Nah, setelah
+       insertion/deletion berhasil, kan balik lagi tuh function call nya. Itu
+       adalah saat dimana balance factor dihitung.
+          - Left-heavy situation (LL Imbalance) -> BF > 1
+          - Right-heavy situation (RR Imbalance) -> BF < -1
+          - Left-right situation (LR Imbalance) -> Parent BF > 1 & negative child BF
+          - Right-left situation (RL Imbalance) -> Parent BF < -1 & positive child BF
+
+------------------------------------- B-Tree -------------------------------------
+
+     # B-Tree
+       Sebuah struktur data tree yang tergolong dalam ternary tree. Dalam kasus
+       ini B-Tree memiliki batasan dalam jumlah child yaitu 2t. Dimana t adalah
+       minimum degree dari sebuah B-Tree yang nilainya konstan untuk tree
+       tersebut. B-Tree merupakan struktur data tree yang cukup unik. Tidak
+       seperti struktur data tree yang lain, B-Tree tumbuh ke atas. Insertion
+       tetap dilakukan pada leaf node, namun tree akan tumbuh ke atas. Struktur
+       data ini mirip dengan BST namun bedanya dia ternary tree dan ada aturan
+       tertentu yang harus diikuti. Sehingga ketinggian tree dapat dikurangi
+       lebih jauh mengingat setiap node dapat menyimpan lebih dari satu nilai.
+       Insertion dilakukan pada leaf node, pertumbuhan keatas dari B-Tree adalah
+       dampak dari child node yang melakukan splitting karena sudah memiliki lebih
+       dari 2t-1 keys. Berdasarkan hasil analisisku, B-Tree baru akan terasa kek
+       linear search kalo dari awal, root nya itu bukan merupakan median dari
+       nilai-nilai yang akan dimasukkan. Tapi kalo dibilang linear search juga
+       bukan. Soalnya dia menyederhanakan linear search juga.
+
+     # Property of B-Tree
+          - Semua leaf harus berada pada level yang sama.
+          - B-Tree dedifinisikan oleh minimum degree (t).
+          - Setiap node kecuali root harus memiliki paling sedikit t-1 key.
+          - Root harus berisi paling sedikit 1 key.
+          - Seluruh node termasuk root hanya boleh menampung paling banyak 2t-1
+            key.
+          - Seluruh key dalam sebuah node disortir dalam urutan naik.
+          - B-Tree tumbuh dan menyusut dari root (tumbuh keatas).
+          - Time complexity untuk search, insert, dan delete dari B-Tree sama
+            dengan balanced BST yaitu O(log n).
+
+     Dengan mempertahankan property dari B-Tree, meskipun keys dari tree bisa
+     saja condong ke satu sisi, namun struktur node yang mengacu pada ketinggian
+     tree akan tetap seimbang.
+
+==================================================================================
 
 https://www.geeksforgeeks.org/tree-data-structure/
