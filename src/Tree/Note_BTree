@@ -126,7 +126,7 @@
      - Masukkan angka 17
 
 [     3,     6,     9,       12                  ]
-[1, 2] [4, 5] [7, 8] [10, 11] [13, 14, 15, 16, 17]   -> Max
+[1, 2] [4, 5] [7, 8] [10, 11] [13, 14, 15, 16, 17]     -> Max
 
      Memasukkan angka 18
      - Mulai traversal hingga leaf node
@@ -165,14 +165,14 @@
             - Base case: Return false jika node full && node adalah leaf
             - Insertion dilakukan sebagai bagian dari pengkondisian.
               boolean success = insert(childNode, value);
-              if (success) // return true
+              if (success) // insert value, return true
               else if (!success && node.keysCount != node.keys.length) // Lakukan split pada child dari node ini
               else if (!success && node.keysCount == node.keys.length && node != root) // return false
-              else if (!success && node.keysCount == node.keys.length && node != root) // root split
+              else if (!success && node.keysCount == node.keys.length && node == root) // root split
 
 [                   9                                     ]
 [     3,     6     ] [       12,      15                  ]
-[1, 2] [4, 5] [7, 8] [10, 11] [13, 14] [16, 17, 18, 19, 20]
+[1, 2] [4, 5] [7, 8] [10, 11] [13, 14] [16, 17, 18, 19, 20]     -> Max
 
 [                   9                                      ]
 [     3,     6     ] [       12,      15,      18          ]
@@ -192,7 +192,7 @@
 
 [                   9                                              ]
 [     3,     6     ] [       12,      15,       17                 ]
-[1, 2] [4, 5] [7, 8] [10, 11] [13, 14] [16, 17] [19, 20, 21, 22, 23]
+[1, 2] [4, 5] [7, 8] [10, 11] [13, 14] [16, 17] [19, 20, 21, 22, 23]     -> Max
 
      Memasukkan angka 24
      - Mulai traversal hingga leaf node
@@ -217,7 +217,7 @@
 
 [                   9                                               ]
 [     3,     6     ] [       12,      15,      18       21          ]
-[1, 2] [4, 5] [7, 8] [10, 11] [13, 14] [16, 17] [19, 20] [22, 23, 24, 25, 26]
+[1, 2] [4, 5] [7, 8] [10, 11] [13, 14] [16, 17] [19, 20] [22, 23, 24, 25, 26]     -> Max
 
      Memasukkan angka 27
      - Mulai traversal hingga leaf node
@@ -241,8 +241,8 @@
      - Masukkan angka 29
 
 [                   9                                                                ]
-[     3,     6     ] [       12,      15,      18      21       24                   ]
-[1, 2] [4, 5] [7, 8] [10, 11] [13, 14] [16, 17] [19, 20] [22, 23] [25, 26, 27, 28, 29]
+[     3,     6     ] [       12,      15,      18      21       24                   ]     -> Max
+[1, 2] [4, 5] [7, 8] [10, 11] [13, 14] [16, 17] [19, 20] [22, 23] [25, 26, 27, 28, 29]     -> Max
 
      Memasukkan angka 30
      - Mulai traversal hingga leaf node
@@ -252,7 +252,7 @@
 
 [                   9,                         18                                    ]
 [     3,     6     ] [       12,      15      ] [       21,      24                  ]
-[1, 2] [4, 5] [7, 8] [10, 11] [13, 14] [16, 17] [19, 20] [22, 23] [25, 26, 27, 28, 29]
+[1, 2] [4, 5] [7, 8] [10, 11] [13, 14] [16, 17] [19, 20] [22, 23] [25, 26, 27, 28, 29]     -> Max
 
 [                   9,                         18                                     ]
 [     3,     6     ] [       12,      15      ] [       21,      24,      27          ]

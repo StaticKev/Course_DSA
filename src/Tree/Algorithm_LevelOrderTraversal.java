@@ -141,46 +141,46 @@ public class Algorithm_LevelOrderTraversal {
     }
 
     // Recursive (Ndak efektif)
-    private static <T> LinkedList<T> levelOrderTraversal(BinaryTreeNode<T> root, boolean dummy) {
-        class RecursionHelper {
-            void levelOrderTraversal(LinkedList<T> result, BinaryTreeNode<T> root, int depthToTraverse) {
-                depthToTraverse--;
-
-                if (depthToTraverse == 0) {
-                    result.add(root.data);
-                } else {
-                    if (root.left != null) levelOrderTraversal(result, root.left, depthToTraverse);
-                    if (root.right != null) levelOrderTraversal(result, root.right, depthToTraverse);
-                }
-            }
-            int calculateDepth(BinaryTreeNode<T> root) {
-                if (root == null) return 0;
-
-                int leftDepth = calculateDepth(root.left);
-                int rightDepth = calculateDepth(root.right);
-
-                return Math.max(leftDepth, rightDepth) + 1;
-            }
-        }
-
-        RecursionHelper helper = new RecursionHelper();
-        LinkedList<T> result = new LinkedList<>();
-
-        if (root == null) throw new IllegalStateException("Root is null!");
-        else result.add(root.data);
-
-        // Ini bisa dihilangkan trus diganti while loop. Soalnya menghitung depth
-        // dilakukan dengan menjelajahi seluruh node pada tree.
-        int depth = helper.calculateDepth(root);
-
-        for (int i = 1; i < depth; i++) {
-            helper.levelOrderTraversal(result, root.left, i);
-            helper.levelOrderTraversal(result, root.right, i);
-        }
-
-        return result;
-
-    }
+//    private static <T> LinkedList<T> levelOrderTraversal(BinaryTreeNode<T> root, boolean dummy) {
+//        class RecursionHelper {
+//            void levelOrderTraversal(LinkedList<T> result, BinaryTreeNode<T> root, int depthToTraverse) {
+//                depthToTraverse--;
+//
+//                if (depthToTraverse == 0) {
+//                    result.add(root.data);
+//                } else {
+//                    if (root.left != null) levelOrderTraversal(result, root.left, depthToTraverse);
+//                    if (root.right != null) levelOrderTraversal(result, root.right, depthToTraverse);
+//                }
+//            }
+//            int calculateDepth(BinaryTreeNode<T> root) {
+//                if (root == null) return 0;
+//
+//                int leftDepth = calculateDepth(root.left);
+//                int rightDepth = calculateDepth(root.right);
+//
+//                return Math.max(leftDepth, rightDepth) + 1;
+//            }
+//        }
+//
+//        RecursionHelper helper = new RecursionHelper();
+//        LinkedList<T> result = new LinkedList<>();
+//
+//        if (root == null) throw new IllegalStateException("Root is null!");
+//        else result.add(root.data);
+//
+//        // Ini bisa dihilangkan trus diganti while loop. Soalnya menghitung depth
+//        // dilakukan dengan menjelajahi seluruh node pada tree.
+//        int depth = helper.calculateDepth(root);
+//
+//        for (int i = 1; i < depth; i++) {
+//            helper.levelOrderTraversal(result, root.left, i);
+//            helper.levelOrderTraversal(result, root.right, i);
+//        }
+//
+//        return result;
+//
+//    }
 
 }
 

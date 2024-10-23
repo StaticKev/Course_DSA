@@ -7,10 +7,16 @@
        elemen-elemen yang memiliki prioritas yang sama. Untuk elemen lain yang
        memiliki prioritas lebih rendah, maka akan dikeluarkan paling akhir sesuai
        urutan prioritas. Prioritas dapat dibentuk dengan mempertimbangkan nilai
-       dari masing-masing elemen yang ada pada queue.
+       dari masing-masing elemen yang ada pada queue. Misal, jika diketahui
+       sebuah priority queue dengan susunan:
+          (rear) 2 -> 13 -> 9 -> 1 -> 4 -> 3 -> 3 -> 4 -> 6 -> 15 -> 6 (front)
+       Dimana angka yang lebih besar memiliki prioritas yang lebih tinggi maka
+       jika operasi dequeue dilakukan sampai seluruh isi queue sudah habis maka,
+       urutannya keluarnya menjadi:
+            15, 13, 9, 6, 6, 4, 4, 3, 3, 2, 1
 
      # Binary Heap
-       Sebuah struktur data tree dimana nilai dari setiap node yang ada harus
+       Sebuah complete binary tree dimana nilai dari setiap node yang ada harus
        selalu lebih kecil/besar daripada child node nya. Ada dua jenis binary
        heap yaitu Min Heap yang setiap node nya selalu lebih kecil daripada child
        nya dan Max Heap yang setiap node nya selalu lebih besar daripada child
@@ -20,10 +26,11 @@
        leaf pada tree tersebut. Sehingga meskipun node pada ketinggian terakhir
        dapat memiliki kurang dari 2 child namun, jika ada child, maka child harus
        diisi dari kiri ke kanan tanpa melewatkan satu pun leaf yang bernilai null
-       sebelumnya (seluruh leaf pada sebelah kiri sebuah node tidak boleh ada yang
-       null).
+       sebelumnya (seluruh leaf dari urutan kiri sebuah node tidak boleh ada yang
+       null). Misal:
+          node | node | node | node | node | null | null | null
 
-     # Representasi Binary Heap Dengan Arary
+     # Representasi Binary Heap Dengan Array
        Cara merepresentasikan binary heap dengan array yaitu dengan melakukan
        level order traversal pada sebuah tree dan menyimpan nilai-nilainya pada
        array, dimulai dari indeks 1 (bukan 0). Lantas bagaimana cara menemukan
@@ -31,13 +38,54 @@
        binary heap dapat ditemukan dengan menggunakan rumus:
           - Left: 2k
           - Right: 2k + 1
-       dimana `k` adalah indeks dari parent node. Rumus ini didapat dengan
+       dimana `k` adalah indeks dari root subtree. Rumus ini didapat dengan
        memperhatikan posisi elemen-elemen yang telah diakses dengan level order
-       traversal. Sementara untuk menemukan parent dari sebuah indeks, dapat
+       traversal. Sementara untuk menemukan parent dari sebuah node, dapat
        digunakan rumus:
           k / 2
        dimana k adalah indeks dari child node. Hasil pembagian dibulatkan ke
        bawah. Rumus diatas hanya dapat digunakan jika elemen pertama dimasukkan
-       pada indeks 1.
+       pada indeks 1. Contoh:
+
+                            ----->     10     ----->
+                                    /      \
+                       ----->     20       30     ----->
+                                /    \   /    \
+                    ----->     40    50 60    70     ----->
+
+       Array hasil level-order traveral = [null, 10, 20, 30, 40 , 50, 60, 70]
+       Struktur tree dapat dibaca seperti ini
+       root -> k = 1
+       child di level pertama -> 20 (2 . 1) & 30 (2 . 1 + 1)
+       child di level kedua -> 40 (2 . indeks 20) & 50 (2 . indeks 20 + 1) dst..
+       parent dari 60 = indeks 60 / 2 -> dibulatkan kebawah
+
+     # Implementasi Max Heap
+       Max heap dapat direpresentasikan dengan menyimpan hasil level-order
+       traversal dari sebuah complete binary tree.
+
+     # Bottom-up Reheapify Max Heap (Swim)
+       Saat measukkan sebuah nilai kedalam heap. Posisi dimana nilai tersebut
+       dimasukkan bisa saja tidak memenuhi property dari max heap. Misal saat
+       nilai 100 akan dimasukkan ke dalam tree ini.
+
+                 34                      34                     100
+              /      \                /      \               /       \
+             23      12     --->     23      12     --->    34       12
+            /  \    /  \            /  \    /  \           /  \     /  \
+           1    2  5    6          1    2  5    6         23   2   5    6
+                                  /                      /
+                                100                     1
+           (kondisi awal)        (memasukkan 100)     (Memperbaiki struktur)
+
+       Saat kondisi di atas tercapai, node yang baru saja ditambahkan harus
+       dipindah posisinya agar properti dari Max Heap. Jika nilai dari sebuah node
+       lebih kecil daripada nilai parentnya, maka tukar nilainya dengan parent.
+       Hal ini mudah dilakukan mengingat, Binary Heap direpresentasikan dengan
+       sebuah array.
+
+     # Top-down Reheapify Max Heap (Sink)
+       Kebalikan dari Bottom-up Reheapify. Digunakan saat deletion, untuk
+       menaikkan sebuah node, mengisi posisi yang kosong.
 
 ----------------------------------------------------------------------------------

@@ -61,7 +61,7 @@
           - Ternary Tree
           - N-ary Tree / Generic Tree
 
-     # Tree Traversal - inorder, preorder, and postorder
+     # Tree Traversal - inorder, preorder, dan postorder
           - Inorder Traversal
             Mengunjungi node kiri sampai bertemu leaf, kemudian mengakses nilai
             yang disimpan, dan dilanjutkan dengan mengunjungi node kanan yang ada
@@ -75,6 +75,17 @@
           - Postorder Traversal
             Mengunjungi seluruh subtree kiri dan kanan hingga mencapai leaf node,
             kemudian mengakses nilainya, dan kembali ke langkah awal.
+
+     # Level-order Traversal
+       Sebuah metode penjelajahan dimana node dikunjungi dari kiri ke kanan
+       dari atas ke bawah. Metode ini memungkinkan kita untuk mengambil nilai
+       mulai dari kecil ke besar dari setiap ketinggian secara berurut (pada
+       complete binary tree).
+                                   ----->    10     ----->
+                                          /       \
+                              ----->     20       30     ----->
+                                       /    \   /    \
+                           ----->     40    50 60    70     ----->
 
      # Menyeimbangkan Tree
        Untuk `n` elemen terdapat n! kemungkinan urutan tree untuk dibuat.
@@ -200,6 +211,9 @@
      Dengan mempertahankan property dari B-Tree, meskipun keys dari tree bisa
      saja condong ke satu sisi, namun struktur node yang mengacu pada ketinggian
      tree akan tetap seimbang.
+
+     REMINDER: Coba implementasi B-Tree sendiri kalo nganggur. Keknya ndak dalam
+               waktu dekat, dan ndak akan pernah. Deletion nya kompleks bgt.
 
 ==================================================================================
 

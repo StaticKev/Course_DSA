@@ -64,6 +64,7 @@ class MyCircularQueue<T> {
     public boolean isEmpty() {
         return front == -1 && rear == -1;
     }
+    // Rear mendahului front
 }
 
 // INCORRECT APPROACH
@@ -175,7 +176,5 @@ public class Impl_CircularQueue {
         System.out.println(circularQueue.dequeue());
         System.out.println(circularQueue.dequeue());
         System.out.println(circularQueue.dequeue());
-
-
     }
 }
