@@ -1,0 +1,35 @@
+==================================== Hashing =====================================
+
+     Sebuah metode untuk menghasilkan output yang mengikuti aturan tertentu
+     (Hash Code) berdasarkan sebuah input yang diberikan, dengan menggunakan
+     hash function. Output yang dihasilkan dapat digunakan untuk menyatakan
+     indeks dari sebuah elemen.
+
+     Dalam implementasinya metode ini dapat digunakan pada struktur data Hash
+     Table. Untuk dapat menemukan sebuah nilai pada sebuah array, indeks dapat
+     dihitung dengan memasukkan nilai dari elemen yang ingin disimpan kedalam
+     hash function. Memasukkan nilai kedalam hash function dapat memberikan hasil
+     yang pasti, sehingga proses pencarian dapat dilakukan dalam constant time
+     O(1). Namun beberapa nilai yang berbeda dapat menghasilkan output yang sama
+     jika dimasukkan kedalam hash function yang sama. Hal ini disebut dengan
+     collision. Yaitu kondisi dimana sebuah lokasi yang ingin ditempati sudah
+     ada isinya. Hal ini perlu diatasi dengan collision resolution. Ada beberapa
+     teknik collision resolution seperti separate chaining (open probing), linear
+     probing, quadratic probing, dan double hashing.
+
+     Untuk mengoptimasi hash function dan mengurangi collision perlu diperhatikan
+     bahwa, sebuah has function harus:
+     1) Mudah untuk dihitung, proses perhitungannya cepat.
+     2) Output dari hash function harus terdistribusi secara merata.
+
+     Beberapa implementasi struktur data yang memanfaatkan hashing seperti:
+     - HashMap
+     - HashSet
+     - Bloom Filter
+     - Count-Min Sketch
+     - Hash Tree (Merkle Tree)
+     - Hopscotch Hashing
+     - Perfect Hashing
+     - Robin Hood Hashing
+
+==================================================================================

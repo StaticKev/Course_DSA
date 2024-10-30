@@ -23,6 +23,7 @@ class MaxPQ<T extends Comparable<T>> {
 
         int currIndex = 1;
 
+        // Sink
         while (currIndex * 2 + 1 <= size) {
             T currNode = heap[currIndex];
             int childIndex;
@@ -30,6 +31,7 @@ class MaxPQ<T extends Comparable<T>> {
             if (heap[currIndex * 2].compareTo(heap[currIndex * 2 + 1]) > 0) childIndex = currIndex * 2;
             else childIndex = currIndex * 2 + 1;
 
+            // Swap
             if (currNode.compareTo(heap[childIndex]) < 0) {
                 heap[currIndex] = heap[childIndex];
                 heap[childIndex] = currNode;

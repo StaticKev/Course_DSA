@@ -19,7 +19,7 @@ class MyBinaryTree<T> {
         root = new BinaryTreeNode<>(initialValue);
     }
 
-    // Pre-order Binary Tree Traversal (Recursion)
+    // Pre-order Binary Tree Traversal (Recursive)
     public void preOrder(BinaryTreeNode<T> root) {
         if (root == null) {
             return;
@@ -29,7 +29,7 @@ class MyBinaryTree<T> {
         preOrder(root.right);
     }
 
-    // In-order Binary Tree Traversal
+    // In-order Binary Tree Traversal (Recursive)
     public void inOrder(BinaryTreeNode<T> root) {
         if (root == null) {
             return;
@@ -39,7 +39,7 @@ class MyBinaryTree<T> {
         inOrder(root.right);
     }
 
-    // Post-order Binary Tree Traversal
+    // Post-order Binary Tree Traversal (Recursive)
     public void postOrder(BinaryTreeNode<T> root) {
         if (root == null) {
             return;
@@ -67,6 +67,7 @@ class MyBinaryTree<T> {
         }
     }
 
+    // In-order Binary Tree Traversal (Iterative)
     public void inOrder() {
         if (this.root == null) return;
         Stack<BinaryTreeNode<T>> stack = new Stack<>();
@@ -84,6 +85,7 @@ class MyBinaryTree<T> {
         }
     }
 
+    // Post-order Binary Tree Traversal (Iterative)
     public void postOrder() {
         if (this.root == null) return;
         Stack<BinaryTreeNode<T>> stack = new Stack<>();

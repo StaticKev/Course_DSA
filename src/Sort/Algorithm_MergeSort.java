@@ -1,4 +1,4 @@
-package LinkedList;
+package Sort;
 
 // Java program to illustrate merge sorted
 // of linkedList

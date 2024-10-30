@@ -1,0 +1,10 @@
+===================================== Graph ======================================
+
+     Sebuah struktur data yang terdiri dari vertex dan edge. Dimana vertex mirip
+     dengan node yang dapat terhubung dengan vertex lain. Hubungan antar 2 vertex
+     disebut dengan edge. Edge yang menghubungkan dua vertex dapat tidak memiliki
+     arah (undirected). Undirected graph dapat direpresentasikan dengan matriks
+     ketetanggaan (adjacency matrix) dimana setiap elemen dalam matriks
+     menyatakan ada tidaknya edge antara dua vertex. Selain itu undirected graph
+     juga dapat direpresentasikan dengan adjacency list. Yaitu Array dengan
+     panjang sebanyak jumlah vertex yang berisi linked list.
